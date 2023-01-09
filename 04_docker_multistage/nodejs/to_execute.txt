@@ -1,0 +1,6 @@
+docker build -t helloworld:nodesmall .
+docker run -p 3002:8080 -d helloworld:nodesmall
+
+docker build -t helloworld:nodebig .
+docker run -p 3003:8080 -d helloworld:nodebig
+

@@ -1,0 +1,9 @@
+cd   docker_py
+docker build -t  python-app . 
+docker run python-app
+
+
+
+
+
+

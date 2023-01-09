@@ -1,9 +1,0 @@
-FROM node:14-alpine
-ADD . /app
-WORKDIR /app
-COPY package.json .
-RUN npm install --production
-COPY . .
-EXPOSE 8080
-CMD [ "node", "get_ex1.js" ]
-

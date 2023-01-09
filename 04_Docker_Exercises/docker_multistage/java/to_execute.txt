@@ -1,5 +1,0 @@
-docker build -t helloworld:huge .
-docker build -t helloworld:small .
-
-
-

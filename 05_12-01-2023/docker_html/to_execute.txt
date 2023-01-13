@@ -1,0 +1,14 @@
+cd docker_html
+docker build -t demobook:v1 .
+docker images
+docker run -d --name demoapp1 -p 8080:80 demobook:v1
+docker ps
+
+http://localhost:8080
+
+docker login
+
+docker tag demobook:v1 geetha0405/demobook:v1
+docker push geetha0405/demobook:v1
+docker pull geetha0405/demobook:v1
+docker run -d --name demoapp1 -p 8080:80 geetha0405/demobook:v1

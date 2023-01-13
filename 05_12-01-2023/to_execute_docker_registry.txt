@@ -1,0 +1,18 @@
+docker run -d -p 5000:5000 --name myregistry registry:2
+docker start myregistry
+docker pull ubuntu
+docker image tag ubuntu localhost:5000/myubuntu
+docker push localhost:5000/myubuntu
+
+http://localhost:5000/v2/_catalog
+docker rmi ubuntu
+docker pull localhost:5000/myubuntu
+
+
+docker image tag nginx:alpine localhost:5000/nginx
+docker push localhost:5000/nginx
+
+docker rmi localhost:5000/myubuntu
+
+docker image tag ubuntu localhost:5000/myregubuntu
+docker push localhost:5000/myregubuntu

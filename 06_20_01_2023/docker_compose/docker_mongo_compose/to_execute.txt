@@ -1,0 +1,10 @@
+docker-compose up -d
+
+######Inside container
+
+docker exec -it mymongo bash
+mongosh -u mongoadmin -p --authenticationDatabase admin
+
+password: mypass
+
+docker volume ls

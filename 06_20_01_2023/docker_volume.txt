@@ -1,0 +1,33 @@
+docker volume create my-vol
+docker volume inspect my-vol
+docker volume ls
+
+docker run -itd -v my-vol:/mydata alpine
+-----------------------------------------------------------------------------
+docker run -it --name=voltest --mount source=my-vol,destination=/mydata1 alpine
+docker ps -a --filter volume=my-vol --format "{{.Names}}"
+---------------------------------------------------------------------------------
+
+docker volume create mysql-data
+docker run --name mysql-db -v mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
+
+docker exec -it mysql-db bash
+mysql -u root -p
+Enter password : my-secret-pw
+
+mysql> create database mydb;
+mysql> use mydb
+
+docker rm -f mysql-db
+
+-------------------------------------------------------------------------------
+
+docker run -d --name bind-mount -v f:\my_local_volume\example:/app/example nginx:1.16.0
+----------------------------------------------------------------------------
+# remove volume
+docker volume remove mysql-data
+
+
+https://phoenixnap.com/kb/docker-volumes
+https://www.youtube.com/watch?v=BefiUTwJobg
+

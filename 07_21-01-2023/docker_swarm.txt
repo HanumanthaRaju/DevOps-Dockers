@@ -1,0 +1,25 @@
+docker swarm init --advertise-addr  127.0.0.1
+docker node ls
+docker service create --name backend --replicas 2 --publish 8080:80 nginx
+docker service ls 
+docker node ps
+docker swarm leave --force
+--------------------------------------------------------------------------------------
+
+
+docker service rm  HelloWorld
+docker service create --name HelloWorld alpine ping docker.com
+docker swarm join-token worker
+
+docker swarm leave --force
+docker swarm join --token SWMTKN-1-51l4pnty9r6mpz92z4kefi3d6cn2vsbvbjmebfts5xg1qgj8w9-bfy1fadu5hh2nyr4omoackowe 127.0.0.1:2377
+docker container logs <cont_id>
+docker service create	Create a new service
+docker service inspect	Display detailed information on one or more services
+docker service logs	Fetch the logs of a service or task
+docker service ls	List services
+docker service ps	List the tasks of one or more services
+docker service rm	Remove one or more services
+docker service rollback	Revert changes to a service’s configuration
+docker service scale	Scale one or multiple replicated services
+docker service update	Update a service

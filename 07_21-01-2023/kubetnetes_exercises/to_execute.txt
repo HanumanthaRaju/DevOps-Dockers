@@ -1,0 +1,12 @@
+Command to deploy:
+	kubectl apply -f dep.yaml
+
+Command to check pods
+	kubectl get pods 
+
+Command to expose
+	kubectl expose deployment nginx-deployment --type=NodePort --name=nginx-service
+
+To get exposed port
+	kubectl get svc 
+             http://localhost:<nodeport>
